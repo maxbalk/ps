@@ -4,7 +4,7 @@
     gift_card="some_val"
   )
 }}
-
 select * 
-from {{source('somesrcname', 'sometablename') }} 
+from {{source('somesrcname', 'othertablename') }} 
+left join {{ref('sub1')}}
 

@@ -1,0 +1,40 @@
+name: seamline_standardization
+version: '1.0.0'
+config-version: 2
+
+profile: 'seamline_standardization'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         
+  - "target"
+  # - "dbt_packages"
+
+vars:
+  migration_cuttoff: "to_timestamp('2024-11-19')"
+
+# dont parse this yet 
+models:
+  +file_format: delta
+  seamline_standardization:
+    buckets:
+      +schema: intermediate 
+      +materialized: view
+    silver:
+      +schema: intermediate 
+      +materialized: table 
+    standardized:
+      +schema: seamline 
+      +materialized: table
+      +contract:
+        enforced: true
+    blended:
+      +materialized: table
+      +contract:
+        enforced: false
+

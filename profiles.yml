@@ -1,0 +1,32 @@
+seamline_standardization:
+  outputs:
+    dev:
+      type: databricks
+      # dev databricks workspace & compute resource
+      host: dbc-0f245d35-99ae.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/f4e917d29a47d8ff
+      token: "{{ env_var('DEV_DBT_DATABRICKS_API_TOKEN') }}"
+      catalog: "{{ env_var('DEV_DBT_USER_CATALOG')}}"
+      schema: dev_standardized
+      threads: 4
+    staging:
+      type: databricks
+      # prod databricks workspace & compute resource
+      host: dbc-ff78c969-0e5f.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/a3be368e71a7b13c
+      token: "{{ env_var('DBT_DATABRICKS_API_TOKEN') }}"
+      catalog: tailorcare_staging
+      schema: standardized
+      threads: 4
+    prod:
+      type: databricks
+      # prod databricks workspace & compute resource
+      host: dbc-ff78c969-0e5f.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/a3be368e71a7b13c
+      token: "{{ env_var('DBT_DATABRICKS_API_TOKEN') }}"
+      catalog: tailorcare_staging
+      schema: standardized
+      threads: 4
+  # default
+  target: staging 
+
