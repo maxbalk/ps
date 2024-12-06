@@ -1,0 +1,101 @@
+cols: &cols
+  - name: source_name
+    data_type: STRING
+  - name: contracted_entity_name
+    data_type: STRING
+  - name: pathway_id
+    data_type: STRING
+  - name: id
+    data_type: STRING
+  - name: intake_id
+    data_type: STRING
+  - name: src_patient_id
+    data_type: STRING
+  - name: patient_id
+    data_type: STRING
+  - name: tc_patient_id
+    data_type: STRING
+  - name: created_date
+    data_type: TIMESTAMP
+  - name: referral_create_date
+    data_type: TIMESTAMP
+  - name: referring_provider_id
+    data_type: STRING
+  - name: referring_provider_name
+    data_type: STRING
+  - name: referring_provider_location
+    data_type: STRING
+  - name: referring_provider_group_id
+    data_type: STRING
+  - name: referring_provider_group_name
+    data_type: STRING
+  - name: referral_status
+    data_type: STRING
+  - name: required_therapy
+    data_type: STRING
+  - name: other_required_therarpy
+    data_type: STRING
+  - name: referred_provider_id
+    data_type: STRING
+  - name: referred_provider_name
+    data_type: STRING
+  - name: referred_provider_location
+    data_type: STRING
+  - name: referred_provider_group_id
+    data_type: STRING
+  - name: referred_provider_group_name
+    data_type: STRING
+  - name: last_modified_by_id
+    data_type: STRING
+  - name: last_modified_by_name
+    data_type: STRING
+  - name: referral_last_modified
+    data_type: TIMESTAMP
+  - name: scheduled
+    data_type: STRING
+  - name: active
+    data_type: STRING
+  - name: scheduled_with_garner_provider
+    data_type: STRING
+  - name: garner_used
+    data_type: STRING
+  - name: reason_for_garner_not_used
+    data_type: STRING
+  - name: other_reason_for_garner_not_used
+    data_type: STRING
+  - name: pathway_name
+    data_type: STRING
+  - name: pathway_type
+    data_type: STRING
+  - name: pathway_definition_id
+    data_type: STRING
+  - name: pathway_description
+    data_type: STRING
+  - name: requires_further_action
+    data_type: STRING
+  - name: referral_coordination_flag
+    data_type: STRING
+  - name: limitations
+    data_type: STRING
+  - name: other_limitations
+    data_type: STRING
+  - name: first_appointment
+    data_type: STRING
+  - name: preferred_provider_flag
+    data_type: STRING
+  - name: garner_recommendation_flag
+    data_type: STRING
+  - name: referral_upload_link
+    data_type: STRING
+  - name: network_coverage_relation
+    data_type: STRING
+  - name: quick_note
+    data_type: STRING
+  - name: scheduling_availability_link
+    data_type: STRING
+
+models:
+  - name: seamline_care_team
+    columns: *cols
+
+
