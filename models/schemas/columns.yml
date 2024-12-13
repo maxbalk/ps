@@ -95,7 +95,7 @@ cols: &cols
     data_type: STRING
 
 models:
-  - name: seamline_care_team
+  - name: sub1
     columns: *cols
 
 

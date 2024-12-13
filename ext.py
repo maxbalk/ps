@@ -1,4 +1,3 @@
-import jinja2             as j2
 import jinja2.nodes       as j2n
 import jinja2.environment as j2e
 import jinja2.ext         as j2x

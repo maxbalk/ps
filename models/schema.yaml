@@ -1,3 +1,0 @@
-models:
-  sub_models:
-    +some_opt: someval

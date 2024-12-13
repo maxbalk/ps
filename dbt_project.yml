@@ -18,10 +18,11 @@ clean-targets:
 vars:
   migration_cuttoff: "to_timestamp('2024-11-19')"
 
-# dont parse this yet 
 models:
   +file_format: delta
   seamline_standardization:
+    sub_models:
+      +schema: some_schema
     buckets:
       +schema: intermediate 
       +materialized: view
