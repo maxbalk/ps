@@ -1,0 +1,82 @@
+sources:
+  - name: raw
+    database: "{%- if target.name == 'dev' -%}
+                 dev_tailorcare
+               {%- elif target.name == 'staging' -%}
+                 tailorcare
+               {%- else -%}
+                 tailorcare 
+               {%- endif -%}"
+    schema: "{{'dev_raw' if target.name == 'dev' else 'raw'}}"
+    tables:
+      - name: seamline_account
+      - name: seamline_accounthistory
+      - name: seamline_actionplan
+      - name: seamline_appointment__c
+      - name: seamline_assessment
+      - name: seamline_assessmentenvelope
+      - name: seamline_assessmentenvelopeitem
+      - name: seamline_careplan
+      - name: seamline_case
+      - name: seamline_casehistory
+      - name: seamline_contentversion
+      - name: seamline_conversation
+      - name: seamline_documentchecklistitem
+      - name: seamline_event
+      - name: seamline_healthcloudga__careplangoal__c
+      - name: seamline_healthcloudga__careplanproblem__c
+      - name: seamline_healthcloudga__careplantemplate__c
+      - name: seamline_healthcloudga__careplantemplateproblem__c
+      - name: seamline_healthcloudga__careplantemplatetask__c
+      - name: seamline_healthcondition
+      - name: seamline_healthconditiondetail
+      - name: seamline_memberplan
+      - name: seamline_purchaserplan
+      - name: seamline_receiveddocument
+      - name: seamline_referral_request__c
+      - name: seamline_task
+      - name: seamline_touchpoint__c
+      - name: seamline_user
+      - name: seamline_voicecall
+      - name: seamline_omniprocess
+      - name: seamline_assessmentquestion
+      - name: seamline_assessmentquestionversion
+      - name: seamline_assessmentquestionresponse
+      - name: seamline_recordtype
+      - name: seamline_seamline_note__c
+      - name: seamline_profile
+
+  - name: seamline
+    database: "{{'dev_tailorcare' if target.name == 'dev' else 'tailorcare'}}"
+    schema: "{{'dev_seamline' if target.name == 'dev' else 'seamline'}}"
+    tables:
+      - name: patient_cross_reference
+
+  - name: compass_standardized
+    database: "{%- if target.name == 'dev' -%}
+                 dev_tailorcare
+               {%- elif target.name == 'staging' -%}
+                 tailorcare_staging
+               {%- else -%}
+                 tailorcare_staging
+               {%- endif -%}"            
+    schema: "{%- if target.name == 'dev' -%}
+               dev_standardized 
+             {%- elif target.name == 'staging' -%}
+               compass_standardized
+             {%- else -%} 
+               compass_standardized
+             {%- endif -%}"
+    tables:
+      - name: patient
+      - name: intake
+      - name: outreach_and_touchpoint
+      - name: pain_and_function
+      - name: pathway
+      - name: patient_status
+      - name: referral
+      - name: task
+      - name: care_team
+      - name: transfer
+      - name: behavioral_health_report
+
